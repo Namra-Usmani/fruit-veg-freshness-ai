@@ -52,10 +52,6 @@ To use the model for classifying the freshness of a fruit or vegetable image, fo
 
 1. Clone the repository to your local machine:
 
-```bash
-git clone https://github.com/captraj/fruit-veg-freshness-ai.git
-cd fruit-veg-freshness-ai
-```
 
 
 2. Make sure to place the image you want to evaluate in the repository's root directory and rename it to `image-to-eval.png`. You may replace `image-to-eval.png` with the path to your own image if it's located elsewhere.
@@ -82,7 +78,6 @@ This project has been completed!
 
 The further implementation of this project into an API is listed on my profile as **freshcheck**, do have a look at that to better understand the integration of this repository.
 
-The **FreshCheck** repository is located at : [https://github.com/captraj/freshcheck]
 
 ## Web UI (local)
 
