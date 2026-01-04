@@ -1,0 +1,36 @@
+/* Simple clean styles for the Freshness Evaluator */
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --accent:#1f6feb;
+  --muted:#6b7280;
+  --success:#16a34a;
+  --danger:#ef4444;
+}
+s
+*{box-izing:border-box}
+body{
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#111827;
+  margin:0;
+  padding:40px 16px;
+}
+.container{max-width:860px;margin:0 auto}
+.header{display:flex;align-items:center;gap:16px}
+.logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#9be7ff,#67b7ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+h1{font-size:1.6rem;margin:0}
+.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-top:20px}
+.form-row{display:flex;gap:12px;align-items:center}
+input[type=file]{padding:6px}
+button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+button:hover{filter:brightness(.95)}
+.result{margin-top:18px;padding:14px;border-radius:10px;border:1px solid #eef2ff;background:linear-gradient(180deg, #fff, #fbfdff)}
+.result h2{margin:0 0 8px 0}
+.result .label{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:600}
+.label-fresh{background:rgba(16,185,129,0.12);color:var(--success)}
+.label-medium{background:rgba(245,158,11,0.08);color:#d97706}
+.label-not{background:rgba(239,68,68,0.08);color:var(--danger)}
+img.preview{max-width:300px;border-radius:8px;display:block;margin-top:12px}
+.flashes{color:var(--danger);list-style:none;padding:0;margin-top:12px}
+.footer{margin-top:20px;color:var(--muted);font-size:.9rem}

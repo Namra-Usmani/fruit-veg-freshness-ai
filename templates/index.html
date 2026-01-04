@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Freshness Evaluator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">FV</div>
+        <div>
+          <h1>Freshness Evaluator</h1>
+          <div class="footer">Upload an image to get a freshness score and label</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <form method="post" action="/upload" enctype="multipart/form-data" class="form-row">
+          <input type="file" name="file" accept="image/*" required>
+          <button type="submit">Upload & Evaluate</button>
+        </form>
+      </div>
+
+    {% if score is defined and label is defined %}
+    <div class="result">
+      <h2>Result</h2>
+      <p><strong>Score:</strong> {{ '%.4f'|format(score) }}</p>
+      <p><strong>Label:</strong>
+        {% if label == 'FRESH' %}
+          <span class="label label-fresh">{{ label }}</span>
+        {% elif label == 'MEDIUM FRESH' %}
+          <span class="label label-medium">{{ label }}</span>
+        {% else %}
+          <span class="label label-not">{{ label }}</span>
+        {% endif %}
+      </p>
+      {% if filename %}
+      <img class="preview" src="{{ url_for('uploaded_file', filename=filename) }}" alt="uploaded image">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </div>
+</body>
+</html>

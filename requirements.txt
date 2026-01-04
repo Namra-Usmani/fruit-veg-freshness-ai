@@ -1,0 +1,9 @@
+# Recommended pinned deps for CPU-only environment
+# Adjust tensorflow version if you need GPU support or a different TF release
+tensorflow==2.10.0
+numpy>=1.23.0
+opencv-python>=4.6.0
+flask>=2.2.0
+h5py>=3.7.0
+# Optional (if you want the headless OpenCV build):
+# opencv-python-headless>=4.6.0
